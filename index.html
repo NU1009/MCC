@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Connect manufacturing data, improve operational visibility, and make faster decisions with Ascentt's Manufacturing Command Center.">
+  <title>Manufacturing Command Center | Ascentt</title>
+  <style>
+    :root{--orange:#F47721;--orange-dark:#D95F0E;--peach:#FFF0E5;--ink:#252525;--muted:#666;--line:#EAEAEA;--white:#fff;--max:1160px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;color:var(--ink);line-height:1.6;background:#fff}
+    a{color:inherit;text-decoration:none}.container{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-size:22px;font-weight:800;letter-spacing:-.8px}.brand span{color:var(--orange)}
+    .navlinks{display:flex;gap:26px;align-items:center;font-size:14px;color:#444}.navlinks a:hover{color:var(--orange)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;background:var(--orange);color:#fff;padding:13px 19px;border-radius:7px;font-weight:700;font-size:14px;border:1px solid var(--orange);transition:.2s}
+    .btn:hover{background:var(--orange-dark);border-color:var(--orange-dark);transform:translateY(-1px)}.btn-outline{background:transparent;color:var(--ink);border-color:#ddd}
+    .hero{padding:66px 0 76px;background:linear-gradient(110deg,#fff 0%,#fff 52%,#fff7f1 100%);overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.03fr .97fr;gap:52px;align-items:center}
+    .eyebrow{color:var(--orange-dark);font-size:12px;font-weight:800;letter-spacing:1.7px;text-transform:uppercase}
+    h1{font-size:clamp(42px,5vw,66px);line-height:1.04;letter-spacing:-2.8px;margin:18px 0 22px;max-width:650px}
+    .hero p{font-size:18px;color:#555;max-width:570px;margin:0 0 28px}.actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-image{min-height:420px;border-radius:18px;background:linear-gradient(0deg,rgba(28,24,20,.25),rgba(28,24,20,.02)),url('https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=1200&q=85') center/cover;position:relative;box-shadow:0 22px 60px #5728081a}
+    .image-label{position:absolute;bottom:18px;left:18px;background:#fff;padding:14px 17px;border-radius:10px;font-size:13px;font-weight:700;box-shadow:0 8px 25px #0001}
+    .image-label small{display:block;color:var(--muted);font-weight:500;margin-top:3px}
+    .trustbar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0}
+    .trustbar-inner{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:#666;font-size:13px;font-weight:600}
+    section{padding:88px 0}.section-head{text-align:center;max-width:760px;margin:0 auto 42px}.section-head h2{font-size:clamp(30px,4vw,43px);letter-spacing:-1.5px;line-height:1.15;margin:12px 0}.section-head p{color:var(--muted);font-size:17px;margin:0}
+    .problem{background:#FAFAFA}.problem-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .problem-card,.cap-card{border:1px solid var(--line);background:#fff;border-radius:13px;padding:23px}
+    .icon{width:44px;height:44px;display:grid;place-items:center;background:var(--peach);color:var(--orange-dark);border-radius:11px;font-size:21px;font-weight:800}
+    .problem-card h3,.cap-card h3{font-size:18px;margin:17px 0 8px}.problem-card p,.cap-card p{color:var(--muted);font-size:14px;margin:0}
+    .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .cap-card{padding:0;overflow:hidden}.cap-image{height:180px;background-position:center;background-size:cover}
+    .cap-content{padding:24px}.cap-content h3{margin-top:0}.tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--orange-dark);margin-bottom:10px}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:step}
+    .step{padding:26px;border-radius:14px;background:#fff;border:1px solid var(--line);position:relative}
+    .step-no{font-size:13px;font-weight:800;color:var(--orange-dark);letter-spacing:1px}.step h3{margin:12px 0 8px;font-size:21px}.step p{margin:0;color:var(--muted);font-size:15px}
+    .outcomes{background:var(--peach)}.outcomes-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+    .outcomes h2{font-size:clamp(32px,4vw,46px);line-height:1.12;letter-spacing:-1.5px;margin:14px 0}.outcomes p{color:#5c514a}
+    .check-list{list-style:none;padding:0;margin:0;display:grid;gap:15px}.check-list li{display:flex;gap:12px;align-items:flex-start;font-weight:600}.check{color:var(--orange-dark);font-weight:900}
+    .audience{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}.pill{padding:11px 16px;border:1px solid var(--line);border-radius:100px;background:#fff;font-size:14px;color:#444}
+    .cta{padding:0 0 88px}.cta-box{border-radius:18px;background:var(--ink);color:#fff;padding:58px 56px;display:flex;align-items:center;justify-content:space-between;gap:35px;position:relative;overflow:hidden}
+    .cta-box:after{content:"";position:absolute;width:320px;height:320px;border:55px solid #f4772122;border-radius:50%;right:12%;top:-210px;pointer-events:none}
+    .cta-copy{max-width:700px;position:relative;z-index:1}.cta h2{font-size:clamp(30px,4vw,43px);line-height:1.12;letter-spacing:-1.4px;margin:12px 0}.cta p{color:#d4d4d4;margin-bottom:0}
+    .cta .btn{white-space:nowrap;position:relative;z-index:1}
+    footer{border-top:1px solid var(--line);padding:25px 0;color:#777;font-size:13px}.footer-inner{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    @media(max-width:900px){.hero-grid,.outcomes-grid{grid-template-columns:1fr;gap:32px}.hero-image{min-height:340px}.problem-grid{grid-template-columns:repeat(2,1fr)}.navlinks{gap:13px}.cta-box{align-items:flex-start;flex-direction:column;padding:38px 30px}}
+    @media(max-width:600px){.container{width:min(100% - 30px,var(--max))}.nav{height:auto;min-height:70px;flex-wrap:wrap;padding:16px 0}.navlinks{order:3;width:100%;overflow:auto;padding:8px 0 2px;font-size:13px}.nav>.btn{padding:10px 12px}.hero{padding:46px 0 55px}h1{letter-spacing:-1.8px}.hero p{font-size:16px}.hero-image{min-height:260px}section{padding:62px 0}.problem-grid,.cap-grid,.steps{grid-template-columns:1fr}.cap-image{height:200px}.trustbar-inner{justify-content:flex-start}.section-head{margin-bottom:30px}.cta{padding-bottom:60px}.cta-box{padding:30px 23px}}
+  </style>
+</head>
+<body>
+  <header class="container nav">
+    <a class="brand" href="#top" aria-label="Ascentt home">ascentt<span>.</span></a>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a href="#platform">Platform</a><a href="#capabilities">Capabilities</a><a href="#how-it-works">How It Works</a><a href="#outcomes">Outcomes</a>
+    </nav>
+    <a class="btn" href="#contact">Request a Demo ↗</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Connected operations. Intelligent decisions.</div>
+          <h1>Make your manufacturing operations work as one.</h1>
+          <p>Connect data across your manufacturing ecosystem, identify emerging issues, and give teams the visibility they need to make faster, better-informed decisions.</p>
+          <div class="actions"><a class="btn" href="#contact">Explore the Platform →</a><a class="btn btn-outline" href="#platform">See How It Works</a></div>
+        </div>
+        <div class="hero-image" role="img" aria-label="Modern manufacturing production environment">
+          <div class="image-label">Manufacturing Command Center<small>From operational signals to action</small></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trustbar"><div class="container trustbar-inner"><span>PRODUCTION VISIBILITY</span><span>CONNECTED SYSTEMS</span><span>PROACTIVE OPERATIONS</span><span>DATA-DRIVEN DECISIONS</span></div></div>
+
+    <section class="problem" id="platform">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">The challenge</div><h2>Your factory generates data. Can your teams act on it?</h2><p>Disconnected systems and delayed insights can make it harder to spot production issues, coordinate teams, and respond with confidence.</p></div>
+        <div class="problem-grid">
+          <article class="problem-card"><div class="icon">⌘</div><h3>Fragmented visibility</h3><p>Critical information sits across MES, ERP, SCADA, IoT, and quality systems.</p></article>
+          <article class="problem-card"><div class="icon">◷</div><h3>Delayed decisions</h3><p>Production bottlenecks and deviations may be identified only after time is lost.</p></article>
+          <article class="problem-card"><div class="icon">↗</div><h3>Reactive operations</h3><p>Teams need a shared view of emerging risks to move from response to prevention.</p></article>
+          <article class="problem-card"><div class="icon">◎</div><h3>Limited accountability</h3><p>Operational issues can be difficult to trace from detection through resolution.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="capabilities">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">The platform</div><h2>One operational view. Connected manufacturing intelligence.</h2><p>Bring manufacturing signals into a clearer operational picture so teams can understand what is happening, where attention is needed, and what to do next.</p></div>
+        <div class="cap-grid">
+          <article class="cap-card"><div class="cap-image" style="background-image:url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=80')"></div><div class="cap-content"><span class="tag">Operational intelligence</span><h3>Visual IQ</h3><p>Turn operational data into clear visual insights. Monitor performance indicators, identify deviations, and understand factors affecting production outcomes.</p></div></article>
+          <article class="cap-card"><div class="cap-image" style="background-image:url('https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=900&q=80')"></div><div class="cap-content"><span class="tag">Production visibility</span><h3>Line Monitoring</h3><p>Improve visibility into production-line performance, downtime, bottlenecks, and operating conditions to support faster investigation and response.</p></div></article>
+          <article class="cap-card"><div class="cap-image" style="background-image:url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=80')"></div><div class="cap-content"><span class="tag">Proactive operations</span><h3>Prevent IQ</h3><p>Support earlier identification of quality and operational risks, helping teams investigate signals and take preventive action.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" style="background:#FAFAFA">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">How it works</div><h2>From operational signals to action</h2><p>A simple operating model to help teams move from scattered data to informed action.</p></div>
+        <div class="steps">
+          <article class="step"><div class="step-no">01 / CONNECT</div><h3>Bring data together</h3><p>Connect relevant signals from MES, ERP, SCADA, IoT, and quality systems.</p></article>
+          <article class="step"><div class="step-no">02 / UNDERSTAND</div><h3>See what matters</h3><p>Surface trends, deviations, bottlenecks, and potential risks in their operational context.</p></article>
+          <article class="step"><div class="step-no">03 / ACT</div><h3>Coordinate the response</h3><p>Help teams prioritize interventions, coordinate action, and track issues through resolution.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="outcomes" id="outcomes">
+      <div class="container outcomes-grid">
+        <div><div class="eyebrow">Business outcomes</div><h2>Make every operational decision count.</h2><p>Build a stronger foundation for connected, responsive, and continuously improving manufacturing operations.</p></div>
+        <ul class="check-list">
+          <li><span class="check">✓</span><span>Better visibility across manufacturing operations</span></li>
+          <li><span class="check">✓</span><span>Faster identification and investigation of production issues</span></li>
+          <li><span class="check">✓</span><span>More proactive maintenance and quality interventions</span></li>
+          <li><span class="check">✓</span><span>Improved collaboration across plant, quality, and maintenance teams</span></li>
+          <li><span class="check">✓</span><span>A stronger foundation for continuous improvement and AI-enabled manufacturing</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">Built for manufacturing teams</div><h2>Designed around the people who keep operations moving.</h2><p>Connect operational priorities across functions and leadership.</p></div>
+        <div class="audience"><span class="pill">Plant & Operations Leaders</span><span class="pill">Manufacturing Excellence</span><span class="pill">Quality & Maintenance</span><span class="pill">CIOs & Digital Transformation</span><span class="pill">Production Leadership</span><span class="pill">Supply Chain Teams</span></div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container cta-box">
+        <div class="cta-copy"><div class="eyebrow">Make your operations more connected</div><h2>Move from reactive manufacturing to connected intelligence.</h2><p>See how Ascentt can help your teams connect operational data, improve visibility, and make more informed manufacturing decisions.</p></div>
+        <a class="btn" href="mailto:info@ascentt.com?subject=Manufacturing%20Command%20Center%20Demo">Request a Demo ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-inner"><span>© <span id="year"></span> Ascentt. All rights reserved.</span><span>Manufacturing Command Center</span></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
